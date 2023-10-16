@@ -1,8 +1,6 @@
-# TODO Найдите количество книг, которое можно разместить на дискете
-memory = 1.44
-kol_stran = 100
-kol_strok = 50
-kol_sim = 25
-memory_for_sim = 4
+list_players = ["Маша", "Петя", "Саша", "Оля", "Кирилл", "Коля"]
 
-print("Количество книг, помещающихся на дискету:", int((memory*1024*1024) // (memory_for_sim*kol_sim*kol_strok*kol_stran)))
+# TODO Разделите участников на две команды
+ind = len(list_players) // 2
+print(list_players[:ind])
+print(list_players[ind:])
