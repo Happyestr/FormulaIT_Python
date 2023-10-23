@@ -55,7 +55,7 @@ main_str = """
 # TODO Распечатайте в столбик букву и её частоту в тексте
 lenght = 0
 for i in main_str.lower():
-    if i.islower():
+    if i.isalpha():
         lenght += 1
 spis = calculate_frequency(count_letters(main_str), lenght)
 for name, value in spis.items():
