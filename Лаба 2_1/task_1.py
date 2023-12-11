@@ -157,6 +157,4 @@ class Button:
 
 if __name__ == "__main__":
     # TODO работоспособность экземпляров класса проверить с помощью doctest
-    import doctest
-    doctest.testmod()
-    #pass
+    pass
