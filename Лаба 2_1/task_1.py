@@ -1,56 +1,50 @@
 # TODO Написать 3 класса с документацией и аннотацией типов
-
-class Glass:
-    def __init__(self, capacity_volume: float, occupied_volume: float):
+class Employee:
+    def __init__(self, name: str, salary: int):
         """
-        Создание и подготовка к работе объекта "Стакан"
-        :param capacity_volume: Объем стакана
-        :param occupied_volume: Объем занимаемой жидкости
+        Создание и подготовка к работе объекта "Рабочий"
+        :param name: Имя
+        :param salary: Зарплата
         Примеры:
-        >>> glass = Glass(500, 0)  # инициализация экземпляра класса
+        >>> employee = Employee("name", 50000)  # инициализация экземпляра класса
         """
-        if not isinstance(capacity_volume, (int, float)):
+        if not isinstance(name, str):
             raise TypeError
-        if capacity_volume <= 0:
-            raise ValueError
-        self.capacity_volume = capacity_volume
-        if not isinstance(occupied_volume, (int, float)):
+        self.name = name
+        if not isinstance(salary, (int, float)):
             raise TypeError
-        if occupied_volume < 0:
+        if salary <= 0:
             raise ValueError
-        self.occupied_volume = occupied_volume
+        self.salary = salary
 
-    def add_water(self, water: float) -> None:
+    def print_name(self):
         """
-        Функция добавляет воду в стакан
-        :param water: Объем воды, добавляемый в стакан
-        :raise ValueError: Если количество воды превышает допустимый размер стакана или меньше нуля
-        :raise TypeError: Если тип не int или float
+        Функция печатает имя Рабочего
         Примеры:
-        >>> glass = Glass(500, 0)
-        >>> glass.add_water(200)
+        >>> employee = Employee("name", 50000)
+        >>> employee.print_name()
         """
-        if not isinstance(water, (int, float)):
-            raise TypeError
-        if water < 0:
-            raise ValueError
         ...
 
-    def remove_water(self, water: float) -> None:
+
+    def print_salary(self):
         """
-        Функция выливет воду из стакана
-        :param water: Объем воды, выливаемые из стакана
-        :raise ValueError: Если количество воды меньше, чем есть в стакане или меньше нуля
-        :raise TypeError: Если тип не int или float
+        Функция печатает зарплату Рабочего
         Примеры:
-        >>> glass = Glass(500, 300)
-        >>> glass.remove_water(200)
+        >>> employee = Employee("name", 50000)
+        >>> employee.print_salary()
         """
-        if not isinstance(water, (int, float)):
-            raise TypeError
-        if water < 0:
-            raise ValueError
         ...
+
+    def print_employee(self):
+        """
+        Функция печатает все поля Рабочего
+        Примеры:
+        >>> employee = Employee("name", 50000)
+        >>> employee.print_employee()
+        """
+        ...
+
 
 class Window:
     def __init__(self, height: float, width: float, position: bool):
@@ -157,4 +151,5 @@ class Button:
 
 if __name__ == "__main__":
     # TODO работоспособность экземпляров класса проверить с помощью doctest
-    pass
+    import doctest
+    doctest.testmod()
