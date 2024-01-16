@@ -1,5 +1,3 @@
-
-
 BOOKS_DATABASE = [
     {
         "id": 1,
@@ -31,11 +29,14 @@ class Book:
 
 # TODO написать класс Library
 class Library:
-    def __init__(self, books=[]):
-        self.books = books
+    def __init__(self, books=None):
+        if books == None:
+            self.books = []
+        else:
+            self.books = books
 
     def get_next_book_id(self) -> int:
-        if len(self.books) == 0:
+        if not self.books:
             return 1
         else:
             return len(self.books) + 1
